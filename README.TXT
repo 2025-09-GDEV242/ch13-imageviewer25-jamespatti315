@@ -23,3 +23,9 @@ WARNING:
 It sometimes happens (unfortunately) that the image viewer window opens BEHIND the
 BlueJ window. This can be confusing, since it initially appears as if nothing 
 is happening.
+
+
+
+worked on by James Patti
+
+on 11/24/25
