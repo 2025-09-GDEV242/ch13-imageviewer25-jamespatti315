@@ -5,9 +5,9 @@ import java.awt.Color;
  * @author James Patti
  * @version 11/24/25
  * 
- * red channel filter - items that have a high red value for the pixel data appear lighter, with a maximum value of 255 appearing as white
+ * blue channel filter - items that have a high blue  value for the pixel data appear lighter, with a maximum value of 255 appearing as white
  */
-public class RedChannelFilter extends Filter
+public class BlueChannelFilter extends Filter
 {
     
 
@@ -15,7 +15,7 @@ public class RedChannelFilter extends Filter
      * Constructor for objects of class RedChannelFilter.
      * @param name The name of the filter.
      */
-    public RedChannelFilter(String name)
+    public BlueChannelFilter(String name)
     {
         super(name);
     }
@@ -35,9 +35,9 @@ public class RedChannelFilter extends Filter
             for(int x = 0; x < width; x++) {
                 image.setPixel(x, y, image.getPixel(x, y).brighter());
                 Color pixel  = image.getPixel(x,y);
-                int red = pixel.getRed(); //gets only the red.
+                int blue = pixel.getBlue(); //gets only the blue.
                 
-                Color newColor = new Color (red,red,red);
+                Color newColor = new Color (blue,blue,blue);
                 image.setPixel(x,y,newColor);
                 
             }
