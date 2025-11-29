@@ -5,17 +5,17 @@ import java.awt.Color;
  * @author James Patti
  * @version 11/24/25
  * 
- * blue channel filter - items that have a high blue  value for the pixel data appear lighter, with a maximum value of 255 appearing as white
+ * red tint  filter - gives everything a red tint naturall.
  */
-public class BlueChannelFilter extends Filter
+public class RedTintFilter extends Filter
 {
     
 
     /**
-     * Constructor for objects of class blueChannelFilter.
+     * Constructor for objects of class RedChannelFilter.
      * @param name The name of the filter.
      */
-    public BlueChannelFilter(String name)
+    public RedTintFilter(String name)
     {
         super(name);
     }
@@ -33,12 +33,15 @@ public class BlueChannelFilter extends Filter
         int width = image.getWidth();
         for(int y = 0; y < height; y++) {
             for(int x = 0; x < width; x++) {
-                image.setPixel(x, y, image.getPixel(x, y));
-                Color pixel  = image.getPixel(x,y);
-                int blue = pixel.getBlue(); //gets only the blue.
+                Color color = image.getPixel(x, y);
+            int r = color.getRed();
+            int g = color.getGreen();
+            int b = color.getBlue();
+            
+            int redTint  = Math.min(255, r + 80);  // a decent red tint, suck at the maths.
                 
-                Color newColor = new Color (blue,blue,blue);
-                image.setPixel(x,y,newColor);
+               Color newColor = new Color(redTint,g,b);
+            image.setPixel(x, y, newColor);
                 
             }
         }

@@ -258,6 +258,11 @@ public class ImageViewer
         //adding my own filters
         filterList.add(new RedChannelFilter("Red Channel"));
         filterList.add(new BlueChannelFilter("Blue Channel"));
+        filterList.add(new GreenChannelFilter("Green Channel"));
+        // now the 3 tints
+        filterList.add(new RedTintFilter("Red Tint"));
+        filterList.add(new BlueTintFilter("Blue Tint"));
+        filterList.add(new GreenTintFilter("Green Tint"));
        
         return filterList;
     }
